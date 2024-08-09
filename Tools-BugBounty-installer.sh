@@ -1,19 +1,8 @@
 #!/bin/bash
-# Author: drak3hft7
-# Date: 08/09/2021
-
-# Check if the script is executed with root privileges
-if [ "${UID}" -eq 0 ]
-then
-    echo ""; echo -e "\e[32m\e[1mOK. The script will install the tools.\e[0m\e[39m"; echo "";
-else
-    echo ""; echo -e "\e[91m\e[1mRoot privileges are required\e[0m\e[39m"; echo "";
-    exit
-fi
 
 #---------Update & upgrade full
 echo -e "\e[93m\e[1m----> Updating all Packages";
-apt-get -y update && apt-get -y upgrade
+sudo apt update && sudo apt -y upgrade
 echo -e "\e[32mDone!";
 sleep 1.5
 clear;
@@ -22,7 +11,7 @@ clear;
 #---------Generic OS
 #Python, ruby and some packages
 echo -e "\e[93m\e[1m----> Installing Python,Ruby and some packages";
-apt-get install -y python python-pip python3 python3-pip python-dnspython python-dev python-setuptools virtualenv unzip make gcc libpcap-dev curl build-essential libcurl4-openssl-dev libldns-dev libssl-dev libffi-dev libxml2 jq libxml2-dev libxslt1-dev build-essential ruby-dev ruby-full libgmp-dev zlib1g-dev
+sudo apt install -y python python-pip python3 python3-pip python-dnspython python-dev python-setuptools virtualenv unzip make gcc libpcap-dev curl build-essential libcurl4-openssl-dev libldns-dev libssl-dev libffi-dev libxml2 jq libxml2-dev libxslt1-dev build-essential ruby-dev ruby-full libgmp-dev zlib1g-dev
 echo -e "\e[32mDone!";
 sleep 1.5
 
@@ -42,12 +31,12 @@ echo -e "\e[32mDone! Nmap installed.";
 sleep 1.5
 #Masscan
 echo -e "\e[93m\e[1m----> Installing Masscan";
-git clone https://github.com/robertdavidgraham/masscan > && cd masscan && make > && make install > && mv bin/masscan /usr/local/bin/;
+git clone https://github.com/robertdavidgraham/masscan cd masscan && make > && make install > && mv bin/masscan /usr/local/bin/;
 echo -e "\e[32mDone! Masscan installed."; echo "";
 sleep 1.5
 #Naabu
 echo -e "\e[93m\e[1m----> Installing Naabu";
-go install -v github.com/projectdiscovery/naabu/v2/cmd/naabu@latest > && ln -s ~/go/bin/naabu /usr/local/bin/;
+go install -v github.com/projectdiscovery/naabu/v2/cmd/naabu@latest && ln -s ~/go/bin/naabu /usr/local/bin/;
 echo -e "\e[32mDone! Naabu installed."; echo "";
 sleep 1.5
 
@@ -65,7 +54,7 @@ echo -e "\e[32mDone! Massdns installed."; echo "";
 sleep 1.5
 #Subfinder
 echo -e "\e[93m\e[1m----> Installing Subfinder";
-go install -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest > && ln -s ~/go/bin/subfinder /usr/local/bin/;
+go install -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest > ln -s ~/go/bin/subfinder /usr/local/bin/;
 echo -e "\e[32mDone! Subfinder installed."; echo "";
 sleep 1.5
 #Knock
@@ -80,7 +69,7 @@ echo -e "\e[32mDone! LazyRecon installed."; echo "";
 sleep 1.5
 #Github-subdomains
 echo -e "\e[93m\e[1m----> Installing Github-subdomains";
-go install github.com/gwen001/github-subdomains@latest > && ln -s ~/go/bin/github-subdomains /usr/local/bin/;
+go install github.com/gwen001/github-subdomains@latest > ln -s ~/go/bin/github-subdomains /usr/local/bin/;
 echo -e "\e[32mDone! Github-subdomains installed."; echo "";
 sleep 1.5
 #Sublist3r
