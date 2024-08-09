@@ -1,37 +1,37 @@
 #!/bin/bash
 
 #---------Update & upgrade full
-echo -e "\e[93m\e[1m----> Updating all Packages";
+echo "\e[93m\e[1m----> Updating all Packages";
 sudo apt update && sudo apt -y upgrade
-echo -e "\e[32mDone!";
+echo "\e[32mDone!";
 sleep 1.5
 clear;
 
 
 #---------Generic OS
 #Python, ruby and some packages
-echo -e "\e[93m\e[1m----> Installing Python,Ruby and some packages";
+echo "\e[93m\e[1m----> Installing Python,Ruby and some packages";
 sudo apt install -y python python-pip python3 python3-pip python-dnspython python-dev python-setuptools virtualenv unzip make gcc libpcap-dev curl build-essential libcurl4-openssl-dev libldns-dev libssl-dev libffi-dev libxml2 jq libxml2-dev libxslt1-dev build-essential ruby-dev ruby-full libgmp-dev zlib1g-dev
-echo -e "\e[32mDone!";
-sleep 1.5
+echo "\e[32mDone!";
+sleep 1
 
 
 #---------Create a Tools folder in Home ~/
-echo -e "\e[93m\e[1m----> Create a Tools folder";
+echo "\e[93m\e[1m----> Create a Tools folder";
 mkdir ~/tools
 cd ~/tools/
-echo -e "\e[32mDone!"; echo "";
-sleep 1.5
+echo "\e[32mDone!"; echo "";
+sleep 1
 
 #---------Install Network scanner
 #Nmap
-echo -e "\e[93m\e[1m----> Installing nmap";
+echo "\e[93m\e[1m----> Installing nmap";
 sudo apt install -y nmap;
-echo -e "\e[32mDone! Nmap installed.";
+echo "\e[32mDone! Nmap installed.";
 sleep 1.5
 #Masscan
 echo -e "\e[93m\e[1m----> Installing Masscan";
-git clone https://github.com/robertdavidgraham/masscan cd masscan && make > && make install > && mv bin/masscan /usr/local/bin/;
+git clone https://github.com/robertdavidgraham/masscan cd masscan && make && make install && mv bin/masscan /usr/local/bin/;
 echo -e "\e[32mDone! Masscan installed."; echo "";
 sleep 1.5
 #Naabu
