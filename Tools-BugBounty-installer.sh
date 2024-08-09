@@ -1,4 +1,4 @@
-#!/bin/bash -i
+#!/bin/bash
 # Author: drak3hft7
 # Date: 08/09/2021
 
