@@ -1,16 +1,16 @@
 #!/bin/bash
 
 #---------Update & upgrade full
-echo "\e[93m\e[1m----> Updating all Packages";
+echo"\e[93m\e[1m----> Updating all Packages";
 sudo apt update && sudo apt -y upgrade
 sudo apt-get --assume-yes install git make gcc
-echo "\e[32mDone!";
+echo"\e[32mDone!";
 sleep 1.5
 clear;
 
 
 #---------Create a Tools folder in Home ~/
-echo "\e[93m\e[1m----> Create a Tools folder";
+echo"\e[93m\e[1m----> Create a Tools folder";
 cd ~/tools/
 echo "\e[32mDone!"; echo "";
 sleep 1
