@@ -61,7 +61,7 @@ echo -e "\e[32mDone! LazyRecon installed."; echo "";
 sleep 1.5
 #Github-subdomains
 echo -e "\e[93m\e[1m----> Installing Github-subdomains";
-go install github.com/gwen001/github-subdomains@latest > ln -s ~/go/bin/github-subdomains /usr/local/bin/;
+go install github.com/gwen001/github-subdomains@latest && ln -s ~/go/bin/github-subdomains /usr/local/bin/;
 echo -e "\e[32mDone! Github-subdomains installed."; echo "";
 sleep 1.5
 #Sublist3r
